@@ -12,6 +12,16 @@ function applyImplementation(appBuildGradle: string) {
     return appBuildGradle;
   }
 
+  // The default on Expo 52
+  const reactNative76or77Include = `apply plugin: "com.facebook.react"`;
+  if (appBuildGradle.includes(reactNative76or77Include)) {
+    return addBelowAnchorIfNotFound(
+      appBuildGradle,
+      reactNative76or77Include,
+      codePushImplementation
+    );
+  }
+
   // The default on Expo 50
   const reactNative73Include = `apply from: new File(["node", "--print", "require.resolve('@react-native-community/cli-platform-android/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim(), "../native_modules.gradle");`;
   if (appBuildGradle.includes(reactNative73Include)) {
