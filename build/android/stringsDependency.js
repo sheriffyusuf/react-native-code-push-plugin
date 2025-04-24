@@ -25,7 +25,7 @@ const withAndroidStringsDependency = (config, props) => {
     }
     return (0, config_plugins_1.withStringsXml)(config, (xmlProps) => {
         if (props?.android?.CodePushServerURL) {
-            xmlProps.modResults = setStrings(xmlProps.modResults, "CodePushServerURL", props?.android?.CodePushServerURL);
+            xmlProps.modResults = setStrings(xmlProps.modResults, "CodePushServerUrl", props?.android?.CodePushServerURL);
         }
         xmlProps.modResults = setStrings(xmlProps.modResults, "CodePushDeploymentKey", props.android.CodePushDeploymentKey);
         /** This prop is optional */
