@@ -5,6 +5,7 @@ export interface PluginConfigType {
     ios: {
         CodePushServerURL?: string;
         CodePushDeploymentKey: string;
+        CodePushPublicKey?: string;
     };
     android: {
         CodePushServerURL?: string;

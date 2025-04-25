@@ -20,6 +20,9 @@ const withIosInfoPlistDependency = (config, props) => {
             infoPlistProps.modResults.CodePushServerURL =
                 props?.ios?.CodePushServerURL;
         }
+        if (props?.ios?.CodePushPublicKey) {
+            infoPlistProps.modResults.CodePushPublicKey = props.ios.CodePushPublicKey;
+        }
         infoPlistProps.modResults.CodePushDeploymentKey =
             props.ios.CodePushDeploymentKey;
         return infoPlistProps;
